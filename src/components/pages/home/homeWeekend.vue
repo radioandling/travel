@@ -2,7 +2,7 @@
 <div class='weekend'>
   <div class="hot-sale">周末闲游</div>
   <ul>
-    <li class="reco-item" v-for='item in weekendListData' :key='item.id'>
+    <li class="reco-item" v-for='item in weekData' :key='item.id'>
       <img class="item-img" :src="item.imgUrl">
       <div class="info-wrapper">
         <p class="item-title">{{item.title}}</p>
@@ -45,6 +45,11 @@ export default {
           imgUrl: 'http://img1.qunarzz.com/sight/p0/1508/2e/d9363ce50a88c8c5ff5a138c67687cd4.water.jpg_350x240_0bc2440f.jpg'
         }
       ]
+    }
+  },
+  props: {
+    weekData: {
+      type: Array
     }
   }
 }

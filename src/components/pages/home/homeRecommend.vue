@@ -2,7 +2,7 @@
 <div class='recommend'>
   <div class="hot-sale">热销推荐</div>
   <ul>
-    <li class="reco-item" v-for='item in recommendListData' :key='item.id'>
+    <li class="reco-item" v-for='item in recoData' :key='item.id'>
       <div class="img-wrapper"><img class="item-img" :src="item.imgUrl"></div>
       <div class="info-wrapper">
         <p class="item-title">{{item.title}}</p>
@@ -46,6 +46,11 @@ export default {
           imgUrl: 'http://img1.qunarzz.com/sight/p0/1508/2e/d9363ce50a88c8c5ff5a138c67687cd4.water.jpg_350x240_0bc2440f.jpg'
         }
       ]
+    }
+  },
+  props: {
+    recoData: {
+      type: Array
     }
   }
 }
