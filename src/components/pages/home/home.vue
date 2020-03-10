@@ -3,6 +3,7 @@
   <home-header></home-header>
   <home-swiper></home-swiper>
   <home-icons></home-icons>
+  <home-reco></home-reco>
 </div>
 </template>
 
@@ -10,12 +11,14 @@
 import HomeHeader from './homeHeader'
 import HomeSwiper from './homeSwiper'
 import HomeIcons from './homeIcons'
+import HomeReco from './homeRecommend'
 
 export default {
   components: {
     HomeHeader,
     HomeSwiper,
-    HomeIcons
+    HomeIcons,
+    HomeReco
   },
   data () {
     return {}
