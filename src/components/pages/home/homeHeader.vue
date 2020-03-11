@@ -2,10 +2,12 @@
 <div class='header'>
   <Icon class="header-left" type="ios-arrow-back" />
   <Input class="header-middle" search placeholder="键入城市名" />
-  <div class="header-right">
-    <span>城市</span>
-    <Icon type="ios-arrow-down" />
-  </div>
+  <router-link to="/city">
+    <div class="header-right">
+      <span>城市</span>
+      <Icon type="ios-arrow-down" />
+    </div>
+  </router-link>
 </div>
 </template>
 
@@ -31,9 +33,13 @@ export default {
   .header-left{
     font-size: 20px;
     font-weight: 300;
+    color: #fff;
   }
   .header-middle{
     width: 75%;
+  }
+  .header-right{
+    color: #fff;
   }
 }
 </style>

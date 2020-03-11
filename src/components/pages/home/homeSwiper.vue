@@ -1,4 +1,3 @@
-<!-- The ref attr used to find the swiper instance -->
 <template>
 <div class="swiper">
   <swiper :options="swiperOption">
