@@ -1,14 +1,9 @@
 <template>
 <div class='header'>
-  <div class="header-top">
-    <router-link to="/">
-      <Icon type="ios-arrow-back" class="icon-back"/>
-    </router-link>
-    <ButtonGroup size="large">
-      <Button class="btn-item" :class="{'btn-active': active}" @click="chageRegion">国内</Button>
-      <Button class="btn-item" :class="{'btn-active': !active}" @click="chageRegion">境外</Button>
-    </ButtonGroup>
-  </div>
+  <router-link to="/">
+    <Icon type="md-arrow-back" class="icon"/>
+  </router-link>
+  城市选择
 </div>
 </template>
 
@@ -17,44 +12,27 @@
 export default {
   components: {},
   data () {
-    return {
-      active: true
-    }
-  },
-  methods: {
-    chageRegion () {
-      this.active = !this.active
-    }
+    return {}
   }
 }
 </script>
 <style lang='less' scoped>
 .header{
-  background-color: #00bcd4;
   height: .86rem;
   line-height: .86rem;
+  overflow: hidden;
   text-align: center;
+  background-color: #00bcd4;
   color: #fff;
+  font-size: .3rem;
+  font-weight: 500;
   position: relative;
-  .icon-back{
+  .icon{
     font-size: 20px;
     position: absolute;
     left: 3%;
-    bottom: 25%;
+    top: 25%;
     color: #fff;
-  }
-  .btn-item{
-    width: 120px;
-    height: .6rem;
-    background-color: #00bcd4;
-    color: #fff;
-    border-color: #fff;
-  }
-  .btn-active{
-    background-color: aliceblue;
-    border-color: #00bcd4;
-    color: #888;
   }
 }
-
 </style>

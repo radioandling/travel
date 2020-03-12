@@ -30,7 +30,6 @@ export default {
   methods: {
     getHomeData () {
       axios.get('/api/index.json').then(res => {
-        console.log(res.data.data.iconList)
         this.swiperData = res.data.data.swiperList
         this.iconsData = res.data.data.iconList
         this.recoData = res.data.data.recommendList

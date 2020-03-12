@@ -38,7 +38,6 @@ export default {
   computed: {
     iconsData1 () {
       const iconsData1 = []
-      console.log(this.iconsData)
       this.iconsData.filter((item, index) => {
         if (index <= 7) {
           iconsData1.push(item)
@@ -48,7 +47,6 @@ export default {
     },
     iconsData2 () {
       const iconsData2 = []
-      console.log(this.iconsData)
       this.iconsData.filter((item, index) => {
         if (index > 7) {
           iconsData2.push(item)
