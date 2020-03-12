@@ -14,7 +14,7 @@
           <div class="title">热门城市</div>
           <div class="button-list">
             <div class="button-wrapper"  v-for='(item, index) in hotCitiesData' :key='index'>
-              <div class="button">{{item.name}}</div>
+              <div class="button" @click="haha">{{item.name}}</div>
             </div>
           </div>
         </div>
@@ -53,6 +53,11 @@ export default {
     choosedLetter () {
       const element = this.$refs[this.choosedLetter][0]
       this.scroll.scrollToElement(element)
+    }
+  },
+  methods: {
+    haha: function () {
+      console.log(1111)
     }
   },
   mounted () {

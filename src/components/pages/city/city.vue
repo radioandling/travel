@@ -36,7 +36,6 @@ export default {
       axios.get('/api/city.json')
         .then(res => {
           var result = res.data.data
-          console.log('hah===>', result)
           this.hotCitiesData = result.hotCities
           this.cities = result.cities
         })
