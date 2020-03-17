@@ -15,6 +15,7 @@ import HomeSwiper from './homeSwiper'
 import HomeIcons from './homeIcons'
 import HomeReco from './homeRecommend'
 import HomeWeek from './homeWeekend'
+import { mapState } from 'vuex'
 
 export default {
   components: {
@@ -24,25 +25,36 @@ export default {
     HomeReco,
     HomeWeek
   },
-  mounted () {
-    this.getHomeData()
-  },
-  methods: {
-    getHomeData () {
-      axios.get('/api/index.json').then(res => {
-        this.swiperData = res.data.data.swiperList
-        this.iconsData = res.data.data.iconList
-        this.recoData = res.data.data.recommendList
-        this.weekData = res.data.data.weekendList
-      })
-    }
-  },
   data () {
     return {
       swiperData: [],
       iconsData: [],
       recoData: [],
-      weekData: []
+      weekData: [],
+      lastCity: ''
+    }
+  },
+  computed: {
+    ...mapState(['city'])
+  },
+  mounted () {
+    this.lastCity = this.city
+    this.getHomeData()
+  },
+  activated () {
+    if (this.lastCity !== this.city) {
+      this.lastCity = this.city
+      this.getHomeData()
+    }
+  },
+  methods: {
+    getHomeData () {
+      axios.get('/api/index.json?city=' + this.city).then(res => {
+        this.swiperData = res.data.data.swiperList
+        this.iconsData = res.data.data.iconList
+        this.recoData = res.data.data.recommendList
+        this.weekData = res.data.data.weekendList
+      })
     }
   }
 }

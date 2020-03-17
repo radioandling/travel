@@ -28,6 +28,8 @@ export default {
       choosedLetter: ''
     }
   },
+  computed: {
+  },
   mounted () {
     this.getCityInfo()
   },
