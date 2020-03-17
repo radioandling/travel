@@ -5,7 +5,7 @@
   </div>
   <div class="search-content" ref="search" v-show="keyword">
     <ul>
-      <li class="search-item" v-for='(item, index) in  list' :key='index'>{{item.name}}</li>
+      <li class="search-item" v-for='(item, index) in  list' :key='index' @click="onChooseCity(item.name)">{{item.name}}</li>
       <li class="search-item no-result" v-if="hasNoData">没有找到相关匹配项目</li>
     </ul>
 </div>
@@ -58,6 +58,11 @@ export default {
   props: {
     cities: {
       type: Object
+    }
+  },
+  methods: {
+    onChooseCity (city) {
+      this.$store.commit('CHANGE_CITY', city)
     }
   }
 }

@@ -14,7 +14,7 @@
           <div class="title">热门城市</div>
           <div class="button-list">
             <div class="button-wrapper"  v-for='(item, index) in hotCitiesData' :key='index'>
-              <div class="button" @click="haha">{{item.name}}</div>
+              <div class="button" @click="onChooseCity(item.name)">{{item.name}}</div>
             </div>
           </div>
         </div>
@@ -23,7 +23,7 @@
             <div class="item-list" v-for='(item, key) of cities' :key="key" :ref="key">
             <div class="title">{{key}}</div>
             <div>
-              <div class="item" v-for='(it, idx) in item' :key='idx'>{{it.name}}</div>
+              <div class="item" v-for='(it, idx) in item' :key='idx' @click="onChooseCity(it.name)">{{it.name}}</div>
             </div>
         </div>
       </div>
@@ -56,8 +56,9 @@ export default {
     }
   },
   methods: {
-    haha: function () {
-      console.log(1111)
+    onChooseCity (city) {
+      this.$store.commit('CHANGE_CITY', city)
+      this.$router.push('/')
     }
   },
   mounted () {
@@ -94,6 +95,7 @@ export default {
           margin: .1rem;
           border:1px solid  #ccc;
           border-radius: 3px;
+          color: #666;
         }
       }
     }

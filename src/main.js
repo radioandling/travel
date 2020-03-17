@@ -9,6 +9,7 @@ import './assets/styles/iconfont.css'
 import '../node_modules/view-design/dist/styles/iview.css'
 import VueAwesomeSwiper from 'vue-awesome-swiper'
 import 'swiper/dist/css/swiper.css'
+import store from './store/index.js'
 
 Vue.config.productionTip = false
 Vue.use(ViewUI)
@@ -19,5 +20,6 @@ fastClick.attach(document.body)
 new Vue({
   el: '#app',
   router,
+  store,
   render: h => h(App)
 })

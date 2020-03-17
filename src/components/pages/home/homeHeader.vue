@@ -4,7 +4,7 @@
   <Input class="header-middle" search placeholder="键入城市名" />
   <router-link to="/city">
     <div class="header-right">
-      <span>城市</span>
+      <span>{{this.$store.state.city}}</span>
       <Icon type="ios-arrow-down" />
     </div>
   </router-link>
@@ -36,7 +36,7 @@ export default {
     color: #fff;
   }
   .header-middle{
-    width: 75%;
+    width: 72%;
   }
   .header-right{
     color: #fff;
