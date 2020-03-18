@@ -2,14 +2,16 @@
 <div class='recommend'>
   <div class="hot-sale">热销推荐</div>
   <ul>
-    <li class="reco-item" v-for='item in recoData' :key='item.id'>
-      <div class="img-wrapper"><img class="item-img" :src="item.imgUrl"></div>
+    <router-link tag="li" class="reco-item" v-for='item in recoData' :key='item.id' :to="'/detail/' + item.id">
+      <div class="img-wrapper">
+        <img class="item-img" :src="item.imgUrl">
+      </div>
       <div class="info-wrapper">
         <p class="item-title">{{item.title}}</p>
         <p class="item-detail">{{item.desc}}</p>
-        <a href="javascript:;" class="item-button">查看详情 >></a>
+        <button class="item-button">查看详情 >></button>
       </div>
-    </li>
+    </router-link>
   </ul>
 </div>
 </template>

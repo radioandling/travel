@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import MyHome from '../components/pages/home/home.vue'
 import MyCity from '../components/pages/city/city.vue'
+import MyDetail from '../components/pages/detail/detail.vue'
 
 Vue.use(Router)
 
@@ -16,6 +17,11 @@ export default new Router({
       path: '/city',
       name: 'myCity',
       component: MyCity
+    },
+    {
+      path: '/detail/:id?',
+      name: 'detail',
+      component: MyDetail
     }
   ]
 })
