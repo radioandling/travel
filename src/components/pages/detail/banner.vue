@@ -47,9 +47,9 @@ export default {
     color: white;
     font-weight: 500;
     position: absolute;
-    top: 150px;
+    top: 130px;
     left: 20px;
-    font-size: 18px;
+    font-size: 14px;
   }
 }
 </style>
