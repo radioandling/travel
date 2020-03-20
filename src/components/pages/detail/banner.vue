@@ -1,13 +1,13 @@
 <template>
   <div>
     <div class='banner' @click="onShowGallary">
-      <img class="banner-img" src="//img1.qunarzz.com/sight/p0/1912/8e/8e363c082affa93da3.water.jpg_600x330_c667e998.jpg">
+      <img class="banner-img" :src="bannerImg">
       <div class="banner-info">
         <div class="info-number"><Icon type="ios-eye-outline" />32</div>
         <div class="info-title">深圳欢乐谷(AAAAA景区)</div>
       </div>
     </div>
-    <comm-gallary :imgsData="imgsData" v-show="showGallary" @onCloseGallary="onGallaryClose"></comm-gallary>
+    <comm-gallary :imgsData="bannerImgs" v-show="showGallary" @onCloseGallary="onGallaryClose"></comm-gallary>
   </div>
 </template>
 
@@ -19,12 +19,13 @@ export default {
   },
   data () {
     return {
-      imgsData: [
-        'http://img1.qunarzz.com/sight/p0/1912/1a/1a0f53ba94eff149a3.water.jpg_r_800x800_56d4b071.jpg',
-        'http://img1.qunarzz.com/sight/p0/1503/c8/c8462724875d7ded.water.jpg_r_800x800_b905e25f.jpg'
-      ],
       showGallary: false
     }
+  },
+  props: {
+    sightName: String,
+    bannerImg: String,
+    bannerImgs: Array
   },
   methods: {
     onShowGallary () {
